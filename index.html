@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>Weather Dashboard</header>
+    <main>
+        <section id="sidebar">
+            <div>
+                <form id="form">
+                   <label for="citysearch">Search for a City</label>
+                    <input type="search" id="citysearch" name="q" placeholder="Search...">
+                    <button>Search</button>
+                </form>
+            </div>
+
+            <div id="saved-city-searches">
+                <div>Orlando</div>
+                <div>New York</div>
+                <div>Sacramento</div>
+                <div>Cleveland</div>
+                <div>Austin</div>
+                <div>Seattle</div>
+            </div>
+        </section>
+
+        <section id="search-results">
+            <div id="current-weather">
+            <p><span id="currcity">Cleveland</span><span id="currdate">Date</span><span id="curricon">:new_moon_with_face:</span></p>
+            <p>Temperature: <span id="currtemp">100F</span></p>
+            <p>Wind: <span id= "currwind">53</span></p>
+            <p>Humidity: <span id= "currhumid">20</span></p>
+            </div>
+            <div id="five-day-forecast">
+                <h2>5-Day Forecast</h2>
+                <p><span id="5dayicon">:emoji:</span><span id="5daytemp">Temperature</span>Temp<span id="5daywind">Wind</span><span id="5dayhumid">Humidity</span></p>
+                <p><span id="5dayicon">:emoji:</span><span id="5daytemp">Temperature</span>Temp<span id="5daywind">Wind</span><span id="5dayhumid">Humidity</span></p>
+                <p><span id="5dayicon">:emoji:</span><span id="5daytemp">Temperature</span>Temp<span id="5daywind">Wind</span><span id="5dayhumid">Humidity</span></p>
+                <p><span id="5dayicon">:emoji:</span><span id="5daytemp">Temperature</span>Temp<span id="5daywind">Wind</span><span id="5dayhumid">Humidity</span></p>
+                <p><span id="5dayicon">:emoji:</span><span id="5daytemp">Temperature</span>Temp<span id="5daywind">Wind</span><span id="5dayhumid">Humidity</span></p>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
