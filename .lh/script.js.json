@@ -1,0 +1,78 @@
+{
+    "sourceFile": "script.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 15,
+            "patches": [
+                {
+                    "date": 1671863074304,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1671863090605,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-var \n\\ No newline at end of file\n+var APIKey \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671863097344,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-var APIKey \n\\ No newline at end of file\n+var APIKey = \"V\"\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671863113233,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-var APIKey = \"V\"\n\\ No newline at end of file\n+var APIKey = \"9ae95c4aaf533d72feba79f29994de45\"\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671863120054,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-var APIKey = \"9ae95c4aaf533d72feba79f29994de45\"\n\\ No newline at end of file\n+var APIKey = 9ae95c4aaf533d72feba79f29994de45\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671863128008,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-var APIKey = 9ae95c4aaf533d72feba79f29994de45\n\\ No newline at end of file\n+var APIKey = 9ae95c4aaf533d72feba79f29994de45'\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671863133431,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-var APIKey = 9ae95c4aaf533d72feba79f29994de45'\n\\ No newline at end of file\n+var APIKey = 9ae95c4aaf533d72feba79f29994de45\"\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671864754086,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-var APIKey = 9ae95c4aaf533d72feba79f29994de45\"\n\\ No newline at end of file\n+var APIKey = \"9ae95c4aaf533d72feba79f29994de45\"\r\n"
+                },
+                {
+                    "date": 1671864760441,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,2 @@\n var APIKey = \"9ae95c4aaf533d72feba79f29994de45\"\r\n+var city = \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671909546606,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,2 +1,1 @@\n var APIKey = \"9ae95c4aaf533d72feba79f29994de45\"\r\n-var city = \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671909551827,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,3 @@\n var APIKey = \"9ae95c4aaf533d72feba79f29994de45\"\r\n+\r\n+function get\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671909558785,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n var APIKey = \"9ae95c4aaf533d72feba79f29994de45\"\r\n \r\n-function get\n\\ No newline at end of file\n+function getAPI\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671909566059,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,5 @@\n var APIKey = \"9ae95c4aaf533d72feba79f29994de45\"\r\n \r\n-function getAPI\n\\ No newline at end of file\n+function getAPI() {\r\n+    \r\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671919326163,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,7 @@\n var APIKey = \"9ae95c4aaf533d72feba79f29994de45\"\r\n \r\n+\r\n+\r\n function getAPI() {\r\n-    \r\n+\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671919331476,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n var APIKey = \"9ae95c4aaf533d72feba79f29994de45\"\r\n \r\n+function\r\n \r\n-\r\n function getAPI() {\r\n \r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671919338979,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n var APIKey = \"9ae95c4aaf533d72feba79f29994de45\"\r\n \r\n-function getUserInput\r\n+function getUserInput()\r\n \r\n function getAPI() {\r\n \r\n }\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1671863074304,
+            "name": "Commit-0",
+            "content": "var "
+        }
+    ]
+}
