@@ -28,16 +28,17 @@ var spanCT = document.getElementById("currtemp")
 var spanCW = document.getElementById("currwind")
 var spanCH = document.getElementById("currhumid")
 
+var btn = document.createElement("button")
 
-var sidebarBtns = document.getElementById("saved-city-searches")
-var button1 = document.body.appendChild()
+// var sidebar = document.getElementById("sidebar")
 
 
 function currDisplay(todayWeather) {
     spanCC.textContent = todayWeather.name
     spanCT.textContent = todayWeather.main.temp
     imgCI.src =`http://openweathermap.org/img/wn/${todayWeather.weather[0].icon}.png`
-    spanCD.textContent = new Date(todayWeather.dt*1000)
+    // Call the formatDate function and pass todayWeather.dt*1000 as a parameter
+    spanCD.textContent = formatDate(todayWeather.dt*1000) 
     spanCW.textContent = todayWeather.wind.speed
     spanCH.textContent = todayWeather.main.humidity
 // console.log(todayWeather.dt)
@@ -50,8 +51,8 @@ formE1.addEventListener("submit", async eventObject => {
     var citySearch = eventObject.target.children[1].value
     var latlon = await getLatLong(citySearch)
     var todayWeather = await getWeather(latlon)
+    // Get formatted date
     // console.log(todayWeather)
-    // var dayToday = await formatDate(dateInMilli)
     currDisplay(todayWeather)
     
 })
@@ -62,14 +63,15 @@ async function getWeather(latlon) {
    return fetchWeather
 }
 
-async function formatDate(dateInMilli) {
-    // Date passed as milliseconds
-    // Pass value through to get a legible date
-    // Get the month and Get the Year(Similiarly as how I obtained the day)
-    // Combine them and return 
-    // const date = new Date("January 02nd, 2023 3:12:00")
-    // const dayToday = date.getDate(dateInMilli)
+function formatDate(dateInMilli) {
+    const date = new Date(dateInMilli)
+    const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    const month = months[date.getMonth()]
+    const year = date.getFullYear()
+    const dayToday = date.getDate()
+    return `${month} ${dayToday} ${year}`
 }
+
 
 
 function getUserInput() {
