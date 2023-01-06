@@ -90,6 +90,12 @@ button {
     height: 13rem;
 }
 
+#emoji { 
+    margin: 3px;
+    display: inline;
+    font-size :0rem;
+}
+
 h2 {
     font-size: 2rem;
     font-weight: bolder;
