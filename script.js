@@ -2,7 +2,7 @@ var APIKey = "9ae95c4aaf533d72feba79f29994de45"
 var baseURL = "https://api.openweathermap.org"
 var geoURL = "/geo/1.0/direct?q="
 var geoFiveURL = ""
-
+var testFunction = ""
 
 async function getLatLong(cityName) {
     const latlon = await fetch(`${baseURL}${geoURL}${cityName},,US&limit=1&appid=${APIKey}`)
