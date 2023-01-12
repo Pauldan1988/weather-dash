@@ -34,33 +34,25 @@ function currDisplay(todayWeather) {
     spanCH.textContent = todayWeather.main.humidity
 }
 
-
 const fiveDaydivCont = document.getElementById("five-day-forecast").children
-// const fiveDayDivOne = document.getElementById("day1").children
-// const fiveDayDivTwo = document.getElementById("day2").children
-// const fiveDayDivThree = document.getElementById("day3").children
-// const fiveDayDivFour = document.getElementById("day4").children
-// const fiveDayDivFive = document.getElementById("day5").children
-const fiveDaySpanE = document.getElementById("emoji")
-// const fiveDaySpanT = document.getElementById("temp")
-// const fiveDaySpanW = document.getElementById("wind")
-// const fiveDaySpanH = document.getElementById("humidity")
-
 
 function fiveDayDisplay(fiveDayWeather) {
-    // fiveDayDivOne[0].src =`http://openweathermap.org/img/wn/${fiveDayWeather.list[0].weather[0].icon}.png`
-    // fiveDayDivOne[1].textContent = fiveDayWeather.list[0].main.temp
-    // fiveDayDivOne[2].textContent = fiveDayWeather.list[0].wind.speed
-    // fiveDayDivOne[3].textContent = fiveDayWeather.list[0].main.humidity
-    // fiveDayDivTwo[0].src =`http://openweathermap.org/img/wn/${fiveDayWeather.list[8].weather[0].icon}.png`
-    // fiveDayDivTwo[1].textContent = fiveDayWeather.list[8].main.temp
-    // fiveDayDivTwo[2].textContent = fiveDayWeather.list[8].wind.speed
-    // fiveDayDivTwo[3].textContent = fiveDayWeather.list[8].main.humidity
+    let currentDayIndex = 0
+    for(let i = 6; i < fiveDayWeather.list.length; i+= 8) {
+        displayDayX(fiveDayWeather.list[i], currentDayIndex) // i represents the data point for the appropartate day 
+        currentDayIndex++  // This must be at the end
+    }
+    
+    
+    // displayDayX(fiveDayWeather.list[0], 0)
 }
 
 function displayDayX(weatherData, dayDisplayed) {
-    const dayDiv = fiveDaydivCont[dayDisplayed]
-    console.log(dayDiv)
+    const dayDiv = fiveDaydivCont[dayDisplayed].children
+    dayDiv[0].src = `http://openweathermap.org/img/wn/${weatherData.weather[0].icon}.png`
+    dayDiv[1].textContent += ": " + weatherData.main.temp
+    dayDiv[2].textContent += ": " + weatherData.wind.speed
+    dayDiv[3].textContent += ": " + weatherData.main.humidity
 }
 
 formE1.addEventListener("submit", async eventObject => {
@@ -69,9 +61,9 @@ formE1.addEventListener("submit", async eventObject => {
     var latlon = await getLatLong(citySearch)
     var todayWeather = await getWeather(latlon)
     const fiveDayWeather = await getFiveWeather(latlon)
-    console.log(fiveDayWeather)
+    // console.log(fiveDayWeather)
     currDisplay(todayWeather)
-    // fiveDayDisplay(fiveDayWeather)
+    fiveDayDisplay(fiveDayWeather)
 })
 
 async function getWeather(latlon) {
