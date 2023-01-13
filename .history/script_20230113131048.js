@@ -107,7 +107,7 @@ function pullSearches() { // Also display buttons with previous searches made.
     const searches = Object.keys(localStorage)
     searches.forEach(city => {
         const savedSearchesEl = document.getElementById("saved-city-searches")
-        const cityButton = document.createElement("button")
+        const cityButton = document.getElementsByClassN("button")
         savedSearchesEl.appendChild(cityButton)
         const displayHiddenB = cityButton.style.display
         if(displayHiddenB == "block") {

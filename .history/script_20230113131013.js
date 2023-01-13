@@ -67,7 +67,7 @@ formE1.addEventListener("submit", async eventObject => {
         currDisplay(todayWeather)
         fiveDayDisplay(fiveDayWeather)
         storeSearch(citySearch)
-        pullSearches()
+        pullSearches(citySearch)
     } else {
         alert(`${citySearch} Is an invalid search. Please check your spelling and search again.`)
     }
@@ -107,8 +107,7 @@ function pullSearches() { // Also display buttons with previous searches made.
     const searches = Object.keys(localStorage)
     searches.forEach(city => {
         const savedSearchesEl = document.getElementById("saved-city-searches")
-        const cityButton = document.createElement("button")
-        savedSearchesEl.appendChild(cityButton)
+        const cityButton = document.getElementsByClassName("button")
         const displayHiddenB = cityButton.style.display
         if(displayHiddenB == "block") {
             cityButton.style.display = "none"
