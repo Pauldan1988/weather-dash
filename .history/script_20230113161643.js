@@ -52,9 +52,9 @@ function fiveDayDisplay(fiveDayWeather) {
 function displayDayX(weatherData, dayDisplayed) {
     const dayDiv = fiveDaydivCont[dayDisplayed].children
     dayDiv[0].src = `http://openweathermap.org/img/wn/${weatherData.weather[0].icon}.png`
-    dayDiv[1].textContent = "Temperature: " + weatherData.main.temp
-    dayDiv[2].textContent = "Wind: " + weatherData.wind.speed
-    dayDiv[3].textContent = "Humidity: " + weatherData.main.humidity
+    dayDiv[1].textContent += ": " + weatherData.main.temp
+    dayDiv[2].textContent += ": " + weatherData.wind.speed
+    dayDiv[3].textContent += ": " + weatherData.main.humidity
 }
 
 formE1.addEventListener("submit", async eventObject => {
@@ -80,8 +80,7 @@ savedSearchesEl.addEventListener("click", async eventObject => {
     const buttonLatLon = await getLatLong(buttonSearch)
     const buttonWeather = await getWeather(buttonLatLon)
     const buttonFiveWeather = await getFiveWeather(buttonLatLon)
-    currDisplay(buttonWeather)
-    fiveDayDisplay(buttonFiveWeather)
+    curr
 })
 
 async function getWeather(latlon) {

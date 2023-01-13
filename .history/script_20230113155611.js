@@ -52,9 +52,9 @@ function fiveDayDisplay(fiveDayWeather) {
 function displayDayX(weatherData, dayDisplayed) {
     const dayDiv = fiveDaydivCont[dayDisplayed].children
     dayDiv[0].src = `http://openweathermap.org/img/wn/${weatherData.weather[0].icon}.png`
-    dayDiv[1].textContent = "Temperature: " + weatherData.main.temp
-    dayDiv[2].textContent = "Wind: " + weatherData.wind.speed
-    dayDiv[3].textContent = "Humidity: " + weatherData.main.humidity
+    dayDiv[1].textContent += ": " + weatherData.main.temp
+    dayDiv[2].textContent += ": " + weatherData.wind.speed
+    dayDiv[3].textContent += ": " + weatherData.main.humidity
 }
 
 formE1.addEventListener("submit", async eventObject => {
@@ -73,16 +73,7 @@ formE1.addEventListener("submit", async eventObject => {
     }
 })
 
-const savedSearchesEl = document.getElementById("saved-city-searches")
 
-savedSearchesEl.addEventListener("click", async eventObject => {
-    const buttonSearch = eventObject.target.textContent
-    const buttonLatLon = await getLatLong(buttonSearch)
-    const buttonWeather = await getWeather(buttonLatLon)
-    const buttonFiveWeather = await getFiveWeather(buttonLatLon)
-    currDisplay(buttonWeather)
-    fiveDayDisplay(buttonFiveWeather)
-})
 
 async function getWeather(latlon) {
     const fetchWeather = await fetch(`${baseURL}/data/2.5/weather?lat=${latlon.lat}&lon=${latlon.lon}&appid=${APIKey}&units=imperial`)
@@ -116,6 +107,7 @@ function storeSearch(city) {
 function pullSearches() { // Also display buttons with previous searches made.
     // get rid of buttons already made and clear container
     const searches = Object.keys(localStorage)
+    const savedSearchesEl = document.getElementById("saved-city-searches")
     savedSearchesEl.innerHTML = ""
     searches.forEach(city => {
         const cityButton = document.createElement("button")
