@@ -46,14 +46,15 @@ function fiveDayDisplay(fiveDayWeather) {
     }
 
 
+    // displayDayX(fiveDayWeather.list[0], 0)
 }
 
 function displayDayX(weatherData, dayDisplayed) {
     const dayDiv = fiveDaydivCont[dayDisplayed].children
     dayDiv[0].src = `http://openweathermap.org/img/wn/${weatherData.weather[0].icon}.png`
-    dayDiv[1].textContent = "Temperature: " + weatherData.main.temp
-    dayDiv[2].textContent = "Wind: " + weatherData.wind.speed
-    dayDiv[3].textContent = "Humidity: " + weatherData.main.humidity
+    dayDiv[1].textContent += ": " + weatherData.main.temp
+    dayDiv[2].textContent += ": " + weatherData.wind.speed
+    dayDiv[3].textContent += ": " + weatherData.main.humidity
 }
 
 formE1.addEventListener("submit", async eventObject => {
@@ -70,17 +71,6 @@ formE1.addEventListener("submit", async eventObject => {
     } else {
         alert(`${citySearch} Is an invalid search. Please check your spelling and search again.`)
     }
-})
-
-const savedSearchesEl = document.getElementById("saved-city-searches")
-
-savedSearchesEl.addEventListener("click", async eventObject => {
-    const buttonSearch = eventObject.target.textContent
-    const buttonLatLon = await getLatLong(buttonSearch)
-    const buttonWeather = await getWeather(buttonLatLon)
-    const buttonFiveWeather = await getFiveWeather(buttonLatLon)
-    currDisplay(buttonWeather)
-    fiveDayDisplay(buttonFiveWeather)
 })
 
 async function getWeather(latlon) {
@@ -115,7 +105,8 @@ function storeSearch(city) {
 function pullSearches() { // Also display buttons with previous searches made.
     // get rid of buttons already made and clear container
     const searches = Object.keys(localStorage)
-    savedSearchesEl.innerHTML = ""
+    const savedSearchesEl = document.getElementById("saved-city-searches")
+    savedSearchesEl = 
     searches.forEach(city => {
         const cityButton = document.createElement("button")
         cityButton.textContent = city
@@ -124,9 +115,7 @@ function pullSearches() { // Also display buttons with previous searches made.
     })
 }
 
-pullSearches()
-    
-// }
+pullSearches() 
 //Store latlon with cityName in local storage in submit event listener
     // create button element dynamicly assign text content(city)
     // append/add button to the button container
