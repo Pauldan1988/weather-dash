@@ -46,6 +46,7 @@ function fiveDayDisplay(fiveDayWeather) {
     }
 
 
+    // displayDayX(fiveDayWeather.list[0], 0)
 }
 
 function displayDayX(weatherData, dayDisplayed) {
@@ -119,7 +120,7 @@ function pullSearches() { // Also display buttons with previous searches made.
     })
 }
 
-pullSearches()
+pullSearches() 
     
 // }
 //Store latlon with cityName in local storage in submit event listener

@@ -46,6 +46,7 @@ function fiveDayDisplay(fiveDayWeather) {
     }
 
 
+    // displayDayX(fiveDayWeather.list[0], 0)
 }
 
 function displayDayX(weatherData, dayDisplayed) {
